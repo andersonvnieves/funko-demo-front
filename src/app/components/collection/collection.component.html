@@ -1,0 +1,10 @@
+<h2>{{pageTitle}}</h2>
+<section>
+    <p-button (click)="openFormModal($event)" [disabled]="requestIsHappening$ | async" label="Adicionar Funko"></p-button>
+</section>
+<p-divider></p-divider>
+<fkl-grid *ngIf="!(requestIsHappening$ | async); else skeleton" [funkos]="funkos$ | async"></fkl-grid>
+<ng-template #skeleton>
+    <fkl-grid-skeleton></fkl-grid-skeleton>
+</ng-template>
+<fkl-form-modal></fkl-form-modal>

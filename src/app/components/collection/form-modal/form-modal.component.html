@@ -1,0 +1,52 @@
+
+<p-dialog 
+    [header]="isAddMode ? 'Adicionar Funko' : 'Editar Funko'" 
+    [(visible)]="isModalFormVisible" 
+    (onHide)="clickCloseModal()" 
+    [modal]="true"  
+    [draggable]="false" 
+    [resizable]="false">  
+    <form [formGroup]="funkoForm" (ngSubmit)="onSubmit($event)">
+        <div class="grid-container">
+            <div class="item1">
+                <div class="input-group">
+                <label for="name">Nome</label>
+                <input pInputText id="name" formControlName="name" aria-describedby="Nome" (change)="nameToUpperCase($event)" />
+                </div>
+                <div class="input-group">
+                    <label for="category">Categoria</label>
+                    <p-dropdown 
+                        required="true"
+                        [options]="categories$ | async" 
+                        formControlName="category" 
+                        placeholder="Escolha uma categoria" 
+                        optionLabel="label" 
+                        optionValue="label"
+                        aria-describedby="Categoria"></p-dropdown>        
+                </div> 
+                <div class="input-group">
+                    <label for="serie">Série</label>
+                    <p-autoComplete 
+                        required="true"
+                        [suggestions]="filteredSeries" 
+                        (completeMethod)="filterSeries($event)"
+                        formControlName="serie" 
+                        placeholder="Escolha uma categoria série" 
+                        (completeMethod)="serieToUpperCase()"
+                        aria-describedby="Série"></p-autoComplete>
+                </div>   
+            </div>
+            <div class="item2">
+                <div class="input-group">
+                    <label for="imageUrl">Imagem</label>
+                    <div class="img-container">
+                        <p-image src="{{funkoForm.controls.imageUrl.value}}" alt="Pré-visualização do funko" width="250" height="250"></p-image>
+                    </div>
+                    <input pInputText id="imageUrl" formControlName="imageUrl" aria-describedby="URL da imgem" class="fkl-input" />
+                </div> 
+            </div>
+          </div>
+          <p-divider></p-divider>
+        <p-button class="btn-right" type="submit" label="Salvar" [disabled]="!funkoForm.valid"></p-button>
+    </form>    
+</p-dialog>

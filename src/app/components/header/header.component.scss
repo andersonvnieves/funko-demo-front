@@ -1,0 +1,67 @@
+h1 {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+    font-style: normal;
+    padding-right: 2rem;
+  }
+
+header{
+    background-color: #000000;
+    padding: 0 1rem;
+    width: 100svw;
+    display: flex;
+    align-items: center;
+  }
+
+  
+@media only screen and (min-width: 600px) {
+    header{
+        padding: 0 3rem;
+    }
+}
+
+/* For desktop */
+@media only screen and (min-width: 768px) {
+    header{
+        padding: 0 8rem;
+      }
+}
+
+
+h1 {
+    color: #FFFFFF;
+    margin: 0;
+}  
+  
+nav {
+    background: #000;
+    height: 60px;
+    ul {
+        margin: 0;
+    padding: 0;
+    border: 0;
+    vertical-align: baseline;
+    }
+    li {
+        display: inline-block;
+        list-style: none;
+        height: 60px;
+        line-height: 60px;
+        padding: 0 40px;
+    }
+    li:hover {
+        background: #1A1A1A;
+        transition: background .3s;
+        cursor: pointer;
+      }
+}
+      
+a {
+    color: #fff !important;
+    font-weight: 500;
+    text-decoration: none !important; 
+}
+
+.active {
+    background-color: #121212;
+}

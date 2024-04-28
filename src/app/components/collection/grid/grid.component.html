@@ -1,0 +1,9 @@
+<div class="collection-grid" *ngIf="funkos.length > 0; else emptyCollection">
+    <fkl-item *ngFor="let funko of funkos" [funko]="funko"></fkl-item> 
+</div>
+<ng-template #emptyCollection>
+   <div class="emptyMessage">
+    <h2>Coleção Vazia</h2>
+    <h3>Adicione seu primeiro Funko à coleção.</h3>
+   </div>
+</ng-template>

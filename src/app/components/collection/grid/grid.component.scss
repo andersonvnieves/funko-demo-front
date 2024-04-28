@@ -1,0 +1,17 @@
+.collection-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    fkl-item {
+        margin:1rem;
+    }
+}
+
+.emptyMessage {
+    text-align: center;
+    margin-top: 8rem;
+}
+
+
+

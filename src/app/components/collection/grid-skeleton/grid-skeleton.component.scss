@@ -1,0 +1,8 @@
+.collection-grid-skeleton {    
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    p-skeleton {
+        margin:1rem;
+    }
+}

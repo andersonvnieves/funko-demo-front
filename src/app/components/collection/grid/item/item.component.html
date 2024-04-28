@@ -1,0 +1,25 @@
+<p-card [style]="{ width: '320px', height: '570px' }">
+    <ng-template pTemplate="header">
+        <div class="header-wrapper">
+            <p-tag [value]="funko.category"></p-tag>
+            <button class="p-panel-header-icon p-link" (click)="menu.toggle($event)">
+                <span class="pi pi-ellipsis-v"></span>
+            </button>
+        </div>
+        <p-menu #menu [model]="items" [popup]="true" />
+    </ng-template>  
+    <ng-template pTemplate="content">
+        <p-image 
+        [src]="funko.imageUrl" 
+        alt="Image" 
+        width="280" 
+        height="280" 
+        [preview]="true" loading="lazy"></p-image>   
+    </ng-template>  
+    <ng-template pTemplate="footer">
+        
+        <p class="p-card-subtitle m-0">{{funko.serie}}</p>
+        <p class="p-card-title m-0">{{funko.name}}</p>        
+    </ng-template>
+</p-card>
+<p-confirmDialog></p-confirmDialog>

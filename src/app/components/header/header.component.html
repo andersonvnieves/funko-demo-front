@@ -1,0 +1,10 @@
+<header>
+    <h1>Funkollection</h1>
+    <nav>
+      <ul>
+        <li [routerLink]="['home']" routerLinkActive="active" ariaCurrentWhenActive="page"><a>Home</a></li>
+        <li [routerLink]="['collection']" routerLinkActive="active" ariaCurrentWhenActive="page"><a>Coleção</a></li>
+      </ul>
+    </nav>
+  </header>
+  <p-progressBar [mode]="(requestIsHappening$ | async) ? 'indeterminate' : ''" [style]="{'height': '5px'}"></p-progressBar>
